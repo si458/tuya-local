@@ -3,8 +3,8 @@
 import gc
 import warnings
 
+import probatio as vol
 import pytest
-import voluptuous as vol
 from fuzzywuzzy import fuzz
 from homeassistant.components.sensor import SensorDeviceClass
 
