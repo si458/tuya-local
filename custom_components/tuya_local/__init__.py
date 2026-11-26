@@ -8,6 +8,7 @@ https://github.com/codetheweb/tuyapi/issues/31.
 """
 
 import logging
+from errno import ENOENT
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_HOST
@@ -104,11 +105,10 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             )
             config[CONF_TYPE] = await device.async_inferred_type()
             if config[CONF_TYPE] is None:
-                _LOGGER.error(
-                    "Unable to determine type for device %s",
-                    config[CONF_DEVICE_ID],
+                raise KeyError(
+                    f"Unable to determine type for device {config[CONF_DEVICE_ID]}"
                 )
-                return False
+
         hass.config_entries.async_update_entry(
             entry,
             data={
@@ -134,11 +134,10 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             )
             config[CONF_TYPE] = await device.async_inferred_type()
             if config[CONF_TYPE] is None:
-                _LOGGER.error(
-                    "Unable to determine type for device %s",
-                    config[CONF_DEVICE_ID],
+                raise KeyError(
+                    f"Unable to determine type for device {config[CONF_DEVICE_ID]}"
                 )
-                return False
+
         opts.pop(CONF_TYPE, None)
         hass.config_entries.async_update_entry(
             entry,
@@ -191,8 +190,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(NOT_FOUND, entry.data[CONF_TYPE])
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id(entity_entry):
@@ -275,11 +273,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id12(entity_entry):
@@ -322,11 +316,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13(entity_entry):
@@ -382,11 +372,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_2(entity_entry):
@@ -430,11 +416,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_3(entity_entry):
@@ -497,11 +479,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_5(entity_entry):
@@ -527,11 +505,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_6(entity_entry):
@@ -568,11 +542,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_7(entity_entry):
@@ -595,11 +565,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_8(entity_entry):
@@ -646,11 +612,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_9(entity_entry):
@@ -673,11 +635,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_10(entity_entry):
@@ -734,11 +692,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_13(entity_entry):
@@ -765,11 +719,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_15(entity_entry):
@@ -811,11 +761,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_16(entity_entry):
@@ -842,11 +788,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_17(entity_entry):
@@ -876,11 +818,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_18(entity_entry):
@@ -904,11 +842,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_19(entity_entry):
@@ -938,11 +872,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_20(entity_entry):
@@ -970,11 +900,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_21(entity_entry):
@@ -1030,11 +956,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_23(entity_entry):
@@ -1063,11 +985,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_24(entity_entry):
@@ -1093,11 +1011,7 @@ async def async_migrate_entry(hass, entry: ConfigEntry):
             entry.data[CONF_TYPE],
         )
         if conf_file is None:
-            _LOGGER.error(
-                NOT_FOUND,
-                entry.data[CONF_TYPE],
-            )
-            return False
+            raise FileNotFoundError(ENOENT, NOT_FOUND, entry.data[CONF_TYPE])
 
         @callback
         def update_unique_id13_25(entity_entry):

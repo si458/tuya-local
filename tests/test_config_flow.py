@@ -8,7 +8,7 @@ from homeassistant.const import CONF_HOST, CONF_NAME
 from homeassistant.data_entry_flow import FlowResultType
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import entity_registry as er
-from pytest_homeassistant_custom_component.common import MockConfigEntry
+from pytest_homeassistant.common import MockConfigEntry
 
 from custom_components.tuya_local import (
     async_migrate_entry,
@@ -236,7 +236,8 @@ async def test_migrate_entry(hass, mocker):
         },
     )
     entry.add_to_hass(hass)
-    assert not await async_migrate_entry(hass, entry)
+    with pytest.raises(KeyError):
+        await async_migrate_entry(hass, entry)
     mock_device.reset_mock()
 
     entry = MockConfigEntry(
@@ -254,7 +255,8 @@ async def test_migrate_entry(hass, mocker):
         },
     )
     entry.add_to_hass(hass)
-    assert not await async_migrate_entry(hass, entry)
+    with pytest.raises(KeyError):
+        await async_migrate_entry(hass, entry)
 
     mock_device.async_inferred_type = mocker.AsyncMock(return_value="smartplugv1")
     mock_device.reset_mock()

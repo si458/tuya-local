@@ -30,16 +30,13 @@ easier to set up using that, or another more recent fork, as an alternative.
 
 ## Installation
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
-
-Installation is easiest via the [Home Assistant Community Store
-(HACS)](https://hacs.xyz/), which is the best place to get third-party
-integrations for Home Assistant. Once you have HACS set up, simply click the button below (requires My Homeassistant configured) or
+Installation is easiest via the Marketplace, which is the best place to get third-party
+integrations for Home Assistant. Simply click the button below (requires My Homeassistant configured) or
 follow the [instructions for adding a custom
-repository](https://hacs.xyz/docs/faq/custom_repositories) and then
+repository](https://www.home-assistant.io/integrations/marketplace/#custom-repositories) and then
 the integration will be available to install like any other.
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=make-all&repository=tuya-local&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=make-all&repository=tuya-local&category=integration)
 
 ## Configuration
 

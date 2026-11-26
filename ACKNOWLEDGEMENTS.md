@@ -865,7 +865,7 @@ Further device support has been made with the assistance of users. Please consid
 - [Primus27](https://github.com/Primus27) for contributing support for Meaco Cirro air conditioners.
 - [ieivanov](https://github.com/ieivanov) for contributing support for Hauslane IN-R110 range hood.
 - [eigger](https://github.com/eigger) for contributing support for Rojeco PAF-186B pet feeder.
-- [viljasenville](https://github.com/viljasenville) for contributing support for Point PODH20 dehumidifier.
+- [viljasenville](https://github.com/viljasenville) for contributing support for Point PODH20 dehumidifier, Calex Flame diffuser.
 - [Yevhen-Pechurin](https://github.com/Yevhen-Pechurin) for contributing support for Tervix Pro Line thermostat.
 - [Beersteak](https://github.com/Beersteak) for contributing support for Parkside PBB-A1 water timer.
 - [eldarsudden](https://github.com/eldarsudden) for contributing support for Teploluxe MCS350 thermostat.
@@ -974,3 +974,5 @@ Further device support has been made with the assistance of users. Please consid
 - [surfnterd](https://github.com/surfnterd) for contributing support for Pro Breeze PB-D-18W-WF 12L dehumidifier.
 - [ozgurclcc](https://github.com/ozgurclcc) for contributing support for Vibrix PureFlow30 air purifier.
 - [meeowgler](https://github.com/meeowgler) for contributing support for EA dual zone car fridge.
+- [hudsonbrendon](https://github.com/hudsonbrendon) for contributing support for Ekaza EKAV-T229Z door lock.
+- [tarzan77cz](https://github.com/tarzan77cz) for contributing support for MG2-6HW breathing mmWave radar.
